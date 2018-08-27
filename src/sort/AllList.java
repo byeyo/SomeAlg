@@ -24,9 +24,6 @@ public class AllList {
 		for(int i = 0 ; i < data.length ; i ++){
 			LinkedList<Integer> ini = new LinkedList<Integer>();
 			s(i, 1, isVisited, ini);
-			for(int j = 0 ; j < isVisited.length ; j ++){
-				isVisited[j] = false;
-			}
 		}
 	}
 	public void s(int v ,int length, boolean[] isVisited,LinkedList<Integer> single){
@@ -52,7 +49,7 @@ public class AllList {
 		single.removeLast();
 	}
 	public static void main(String[] args){
-		AllList b = new AllList("1235");
+		AllList b = new AllList("ABC");
 		int count = 0;
 		for(String string : b.list){
 			System.out.println(string);
