@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -12,6 +14,7 @@ public class AllList {
 	char[] data;
 	HashSet<String> list = new HashSet<>();
 	Graph graph = null;
+	StringBuilder sb = new StringBuilder();
 	public AllList(String str){
 		data = str.toCharArray();
 		graph = new Graph(data.length);
