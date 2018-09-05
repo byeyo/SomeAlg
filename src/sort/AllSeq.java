@@ -9,7 +9,7 @@ public class AllSeq<T> {
 	T[] data ;
 	LinkedList<LinkedList<T>> result = new LinkedList<>();
 	public static void main(String[] args) {
-		Integer[] data = {2,3,4,5};
+		Integer[] data = {2,3,4};
 		AllSeq<Integer> as = new AllSeq(data);
 		as.step(0);
 		for(LinkedList<Integer> ele : as.result) {
@@ -34,16 +34,21 @@ public class AllSeq<T> {
 			LinkedList<T> eleList = new LinkedList<>();
 			for(int i : index) {
 				eleList.add(data[i]);
+				System.out.print( i+" ");
 			}
+			System.out.println();
 			result.add(eleList);
 			return;
 		}
-		step(cur+1);
-		for(int i = cur + 1 ;i < index.length ; i ++) {
+		//step(cur+1);
+		for(int i = cur  ;i < index.length ; i ++) {
 			int temp = index[i];
 			index[i] = index[cur];
-			index[cur] = temp;
+			index[cur] = temp;		
 			step(cur+1);
+			temp = index[i];
+			index[i] = index[cur];
+			index[cur] = temp;	
 		}
 	}
 }
